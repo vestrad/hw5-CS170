@@ -102,14 +102,14 @@ class IngredientDatabase {
     	ingredients[6] = new Ingredient("cocoa", "g", 0.19, 0.22, 0.12);
     	ingredients[7] = new Ingredient("ham", "g", 0.018, 0.05, 0);
     	ingredients[8] = new Ingredient("bananas", "g", 0.01, 0.003, 0.2);
-    	ingredients[9] = new Ingredient("carrots boiled", "g", 0.006, 0, 0);
-    	ingredients[10] = new Ingredient("chestnuts", "g", 0.018, 0.05, 0);
-    	ingredients[11] = new Ingredient("cola", "g", 0.018, 0.05, 0);
-    	ingredients[12] = new Ingredient("gooseberries", "g", 0.018, 0.05, 0);
-    	ingredients[13] = new Ingredient("kidney fried", "g", 0.018, 0.05, 0);
-    	ingredients[14] = new Ingredient("liver fried", "g", 0.018, 0.05, 0);
-    	ingredients[15] = new Ingredient("pork leg roast", "g", 0.018, 0.05, 0);
-    	ingredients[16] = new Ingredient("yoghurt natural", "g", 0.018, 0.05, 0);
+    	ingredients[9] = new Ingredient("carrots boiled", "g", 0.006, 0, 0.04);
+    	ingredients[10] = new Ingredient("chestnuts", "g", 0.02, 0.027, 0.37);
+    	ingredients[11] = new Ingredient("cola", "g", 0, 0, 0);
+    	ingredients[12] = new Ingredient("gooseberries", "g", 0.018, 0.05, 0.122);
+    	ingredients[13] = new Ingredient("kidney fried", "g", 0.25, 0.06, 0);
+    	ingredients[14] = new Ingredient("liver fried", "g", 0.27, 0.13, 0.07);
+    	ingredients[15] = new Ingredient("pork leg roast", "g", 0.27, 0.2, 0);
+    	ingredients[16] = new Ingredient("yoghurt natural", "g", 0.059, 0.012, 0.056);
 
     	numIngredients = 17;
  }
