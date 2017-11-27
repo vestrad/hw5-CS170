@@ -26,12 +26,14 @@ public class TestDiet {
 
 class Ingredient {
 
+	// Private attributes (5), name of ingredient - String, unit of ingredient - String, amount of protein - double, amount of fat - double, amount of carbs - double.
 	private String name;
 	private String unit;
 	private double protein;
 	private double fat;
 	private double carbs;
 
+	// Constructor that takes the name of the ingredient, unit, amount of protein, amount of fat, and amount of carbs. Then it sets the attributes: name, unit, protein, fat, and carbs
 	public Ingredient(String name, String unit, double protein, double fat, double carbs) {
     	this.name = name;
     	this.unit = unit;
@@ -40,38 +42,47 @@ class Ingredient {
     	this.carbs = carbs;
 	}
 
+	// Getter method that takes nothing and returns attribute name
 	public String getName() {
     	return name;
 	}
 
+	// Getter method that returns attribute unit
 	public String getUnit() {
     	return unit;
 	}
 
+	// Getter method that takes nothing and returns attribute protein
 	public double getProtein() {
     	return protein;
 	}
 
+	// Getter method that takes nothing and returns attribute fat
 	public double getFat() {
     	return fat;
 	}
 
+	// Getter method that takes nothing and returns attribute carbs
 	public double getCarbs() {
     	return carbs;
 	}
 
+	// Takes the amount of the ingredient as a double and returns the total amount of protein.
 	public double computeProtein(double quantity) {
     	return quantity * protein;
 	}
 
+	// Takes the amount of the ingredient as a double and returns the total amount of fat.
 	public double computeFat(double quantity) {
     	return quantity * fat;
 	}
 
+	// Takes the amount of the ingredient as a double and returns the total amount of carbs.
 	public double computeCarbohydrates(double quantity) {
     	return quantity * carbs;
 	}
 
+	// Takes the amount of the ingredient as a double and returns the total amount of kilocalories.
 	public double computeCalories(double quantity) {
     	return quantity * ((protein * 4) + (fat * 9) + (carbs * 4));
 	}
@@ -79,6 +90,8 @@ class Ingredient {
 	public String toString() { // returns in the following format:      	//"Ingredient : _____"
     	return "Ingredient : " + name;
 	}
+
+	
 	public String nutritionalValues(double quantity){
 	double q = quantity;
 	double c = (this.protein * 4) + (this.fat * 9) + (this.carbohydrates * 4);
@@ -190,7 +203,6 @@ for (int i = 0; i < numIngredients; i++) {
     	return result;
 	}
 }
-
 
 
 
