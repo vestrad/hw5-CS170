@@ -15,7 +15,7 @@ public class TestDiet {
          System.out.println();
          System.out.println(cake.nutritionalValues()); 
 
-         System.out.println("------------------");
+	 System.out.println("/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/");
 
          Recipe bBread = new Recipe("banana bread");
          bBread.addIngredient(db.findIngredient("egg"), 4);
@@ -27,6 +27,40 @@ public class TestDiet {
          System.out.println(bBread);
          System.out.println();
          System.out.println(bBread.nutritionalValues()); 
+		
+	 System.out.println("/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/");
+
+         Recipe soup = new Recipe("disgusting soup");
+         soup.addIngredient(db.findIngredient("egg"), 8);
+         soup.addIngredient(db.findIngredient("cola"), 9000);
+         soup.addIngredient(db.findIngredient("butter"), 132);
+         soup.addIngredient(db.findIngredient("flour"), 89);
+         soup.addIngredient(db.findIngredient("milk"), 21);
+         soup.addIngredient(db.findIngredient("carrots boiled"), 7);
+         soup.addIngredient(db.findIngredient("liver fried"), 200);
+         soup.addIngredient(db.findIngredient("pork leg roast"), 9);
+         soup.addIngredient(db.findIngredient("yoghurt natural"), 17);
+         soup.addIngredient(db.findIngredient("cocoa"), 23);
+
+         System.out.println(soup);
+         System.out.println();
+         System.out.println(soup.nutritionalValues()); 
+		
+	 System.out.println("/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/_/-/");
+
+         Recipe ratatouille = new Recipe("Remy's Famouse Ratatouille");
+         ratatouille.addIngredient(db.findIngredient("egg"), 3);
+         ratatouille.addIngredient(db.findIngredient("Fossati's toenail"), 9000);
+         ratatouille.addIngredient(db.findIngredient("butter"), 2);
+         ratatouille.addIngredient(db.findIngredient("flour"), 12);
+         ratatouille.addIngredient(db.findIngredient("milk"), 3);
+         ratatouille.addIngredient(db.findIngredient("gooseberries"), 1);
+         ratatouille.addIngredient(db.findIngredient("ham"), 20);
+		
+         System.out.println(ratatouille);
+         System.out.println();
+         System.out.println(ratatouille.nutritionalValues()); 
+
 
 	}
     
