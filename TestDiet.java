@@ -50,7 +50,7 @@ public class TestDiet {
 
          Recipe ratatouille = new Recipe("Remy's Famouse Ratatouille");
          ratatouille.addIngredient(db.findIngredient("egg"), 3);
-         ratatouille.addIngredient(db.findIngredient("Fossati's toenail"), 9000);
+         ratatouille.addIngredient(db.findIngredient("cola"), 0.3);
          ratatouille.addIngredient(db.findIngredient("butter"), 2);
          ratatouille.addIngredient(db.findIngredient("flour"), 12);
          ratatouille.addIngredient(db.findIngredient("milk"), 3);
