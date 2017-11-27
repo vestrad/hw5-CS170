@@ -81,9 +81,12 @@ class Ingredient {
 	}
 	public String nutritionalValues(double quantity){
 	double q = quantity;
-	double c = 
+	double c = (this.protein * 4) + (this.fat * 9) + (this.carbohydrates * 4);
+		    
 
-	return q + " " + unit + " of " + this.name + " contain " + q * this.protein + " " + unit + " of protein, " + q * this.fat + " " + unit + " of fat, and " + q * this.carbohydrates + + " " + unit + " of carbohydrates, for a total of " + c + " calories."
+	return q + " " + unit + " of " + this.name + " contain " + q * this.protein + " " 
+		+ unit + " of protein, " + q * this.fat + " " + unit + " of fat, and " + q * this.carbohydrates + 
+		" " + unit + " of carbohydrates, for a total of " + c + " calories."
 	}
 }
 // name, unit, protein, fat, carbs
@@ -181,7 +184,9 @@ for (int i = 0; i < numIngredients; i++) {
 	}
 
 	public String nutritionalValues() {
-    	String result = "Nutritional values of " + name + ":\n" + "Total protein: " + computeProtein() + "\nTotal fat: " + computeFat() + "\nTotal carbohydrates: " + computeCarbohydrates() + "\nTotal calories: " + computeCalories();
+    	String result = "Nutritional values of " + name + ":\n" + "Total protein: " + computeProtein() 
+		+ "\nTotal fat: " + computeFat() + "\nTotal carbohydrates: " + computeCarbohydrates() 
+		+ "\nTotal calories: " + computeCalories();
     	return result;
 	}
 }
