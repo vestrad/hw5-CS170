@@ -11,10 +11,22 @@ public class TestDiet {
          cake.addIngredient(db.findIngredient("flour"), 200);
          cake.addIngredient(db.findIngredient("milk"), 50);
          cake.addIngredient(db.findIngredient("cocoa"), 75);
-
          System.out.println(cake);
          System.out.println();
          System.out.println(cake.nutritionalValues()); 
+
+         System.out.println("------------------");
+
+         Recipe bBread = new Recipe("banana bread");
+         bBread.addIngredient(db.findIngredient("egg"), 4);
+         bBread.addIngredient(db.findIngredient("sugar"), 9000);
+         bBread.addIngredient(db.findIngredient("butter"), 100);
+         bBread.addIngredient(db.findIngredient("flour"), 200);
+         bBread.addIngredient(db.findIngredient("milk"), 50);
+         bBread.addIngredient(db.findIngredient("bananas"), 750);
+         System.out.println(bBread);
+         System.out.println();
+         System.out.println(bBread.nutritionalValues()); 
 
 	}
     
@@ -94,12 +106,12 @@ class Ingredient {
 	
 	public String nutritionalValues(double quantity){
 	double q = quantity;
-	double c = (this.protein * 4) + (this.fat * 9) + (this.carbohydrates * 4);
+	double c = (this.protein * 4) + (this.fat * 9) + (this.carbs * 4);
 		    
 
 	return q + " " + unit + " of " + this.name + " contain " + q * this.protein + " " 
-		+ unit + " of protein, " + q * this.fat + " " + unit + " of fat, and " + q * this.carbohydrates + 
-		" " + unit + " of carbohydrates, for a total of " + c + " calories."
+		+ unit + " of protein, " + q * this.fat + " " + unit + " of fat, and " + q * this.carbs + 
+		" " + unit + " of carbohydrates, for a total of " + c + " calories.";
 	}
 }
 // name, unit, protein, fat, carbs
@@ -129,10 +141,10 @@ class IngredientDatabase {
 
     	numIngredients = 17;
  }
-public String findIngredient(String desiredIngredient) {
+public Ingredient findIngredient(String desiredIngredient) {
     	for (int i = 0; i < numIngredients; i++) {
         	if (ingredients[i].getName().equals(desiredIngredient)) { // check for equality of content
-            	return ingredients[i].getName();
+            	return ingredients[i];
     	}
     	}
     	return null; // if for loop finishes
@@ -143,57 +155,61 @@ public String findIngredient(String desiredIngredient) {
 class Recipe {
 
 	private String name;
-	private double numIngredients;
+	private int numIngredients;
 	private Ingredient[] recipe;
 	private double[] amounts;
 
 	public Recipe(String name) {
     	this.name = name;
-    	numingredients = 0;
-    	recipe = new String[100];
+    	numIngredients = 0;
+    	recipe = new Ingredient[100];
     	amounts = new double[100];
 	}
 
-	public void addIngredient(Ingredient ingredient, double quanitity) {
-
-
+	public void addIngredient(Ingredient ingredient, double quantity) {
+		recipe[numIngredients] = ingredient;
+		amounts[numIngredients] = quantity;
+		numIngredients++;
 	}
+
 	public double computeProtein(){
     	double p = 0;
-    	for (i = 0; i < numingredients; i++){
-        	p += recipe[i].computeProtein();
-}
-return p;
-}
+    	for (int i = 0; i < numIngredients; i++){
+        	p += recipe[i].computeProtein(amounts[i]);
+		}
+		return p;
+	}
+
 	public double computeFat(){
     	double p = 0;
-    	for (i = 0; i < numingredients; i++){
-        	p += recipe[i].computeFat();
-}
-return p;
-}
+    	for (int i = 0; i < numIngredients; i++){
+        	p += recipe[i].computeFat(amounts[i]);
+	}
+
+	return p;
+	}
+
 	public double computeCarbohydrates(){
     	double p = 0;
-    	for (i = 0; i < numingredients; i++){
-        	p += recipe[i].computeCarbohydrates();
-}
-return p;
-}
+    	for (int i = 0; i < numIngredients; i++){
+        	p += recipe[i].computeCarbohydrates(amounts[i]);
+	}
+	return p;
+	}
 	public double computeCalories(){
     	double p = 0;
-    	for (i = 0; i < numingredients; i++){
-        	p += recipe[i].computeCalories();
-}
-return p;
-}
+    	for (int i = 0; i < numIngredients; i++){
+        	p += recipe[i].computeCalories(amounts[i]);
+	}
+	return p;
+	}
 
-
-    
 	public String toString() {
     	String result = "Recipe of " + name + ":";
-for (int i = 0; i < numIngredients; i++) {
-    	result += "\n" + amounts[i] + " " + recipe[i].getUnit() + " of " + recipe[i].getName();
-}
+		for (int i = 0; i < numIngredients; i++) {
+		    	result += "\n" + amounts[i] + " " + recipe[i].getUnit() + " of " + recipe[i].getName();
+		}
+		return result;
 	}
 
 	public String nutritionalValues() {
@@ -203,7 +219,6 @@ for (int i = 0; i < numIngredients; i++) {
     	return result;
 	}
 }
-
 
 
 
